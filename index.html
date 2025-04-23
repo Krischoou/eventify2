@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Система за планиране на събития</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="logo">Eventify</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Начало</a></li>
+          <li><a href="events.html">Събития</a></li>
+          <li><a href="shop.html">Магазин</a></li>
+          <li><a href="about.html">За нас</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-icons">
+        <div class="search-container">
+          <img src="icons/search.png" alt="Търсене" class="search-icon" id="search-icon">
+          <input type="text" id="search-input" class="search-input" placeholder="Търсене...">
+        </div>
+        
+        <a href="cart.html"><img src="icons/shopping-bag.png" alt="Количка" class="nav-icon"></a>
+        <a href="login.html" id="profile-link"><img src="icons/user.png" alt="Профил" class="nav-icon"></a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="slideshow-container">
+      <img class="slide active" src="pictures/hero1.jpg" alt="Slide 1">
+      <img class="slide"        src="pictures/hero2.jpg" alt="Slide 2">
+      <img class="slide"        src="pictures/hero3.jpg" alt="Slide 3">
+    </div>
+    
+    <div class="hero-content">
+      <h1>Планирай своето събитие лесно!</h1>
+      <p>Организирайте събития и пазарувайте необходимите продукти в една платформа.</p>
+      <a href="#" class="btn" id="start-btn">Започни сега</a>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <h2>Как работи?</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="pictures/arrange.png" alt="Календар">
+        <h3>Създай събитие</h3>
+        <p>Планирай своето събитие лесно и добави детайли като дата, място и задачи.</p>
+      </div>
+      <div class="step">
+        <img src="pictures/shop.png" alt="Пазарска количка">
+        <h3>Купи необходимото</h3>
+        <p>Разгледай нашия магазин и закупи всичко, което ти трябва за събитието.</p>
+      </div>
+      <div class="step">
+        <img src="pictures/plan.png" alt="Парти">
+        <h3>Наслади се</h3>
+        <p>Организирай перфектното събитие и се забавлявай с приятелите си!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <p>EventMaster – Твоят помощник за организиране на събития.</p>
+      <p class="footer-copy">&copy; 2025 EventMaster. Всички права запазени.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Firebase SDK -->
+  <script type="module" src="/js/firebase-init.js"></script>
+</body>
+</html>

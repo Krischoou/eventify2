@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моите събития</title>
+</head>
+<body>
+    <h2>Моите събития</h2>
+    <div id="eventsContainer"></div>
+
+    <a href="events.html">Добави ново събитие</a>
+
+    <script>
+        function loadEvents() {
+            let eventsContainer = document.getElementById("eventsContainer");
+            let events = JSON.parse(localStorage.getItem("events")) || [];
+
+            if (events.length === 0) {
+                eventsContainer.innerHTML = "<p>Няма запазени събития.</p>";
+                return;
+            }
+
+            let html = "<ul>";
+            events.forEach((event, index) => {
+                html += `<li>
+                    <strong>${event.eventName}</strong> (${event.eventType})<br>
+                    📅 Дата: ${event.eventDate} <br>
+                    📍 Локация: ${event.eventLocation} <br>
+                    📝 Описание: ${event.eventDescription} <br>
+                    <button onclick="deleteEvent(${index})">❌ Изтрий</button>
+                </li><hr>`;
+            });
+            html += "</ul>";
+
+            eventsContainer.innerHTML = html;
+        }
+
+        function deleteEvent(index) {
+            let events = JSON.parse(localStorage.getItem("events")) || [];
+            events.splice(index, 1);
+            localStorage.setItem("events", JSON.stringify(events));
+            loadEvents();
+        }
+
+        loadEvents();
+    </script>
+
+<script src="my-events.js"></script>
+
+
+
+
+<footer>
+    <div class="footer-container">
+        <p>EventMaster – Твоят помощник за организиране на събития.</p>
+        <p class="footer-copy">&copy; 2025 EventMaster. Всички права запазени.</p>
+    </div>
+</footer>
+
+
+
+<!-- Firebase SDK -->
+<script type="module" src="/js/firebase-init.js"></script>
+</body>
+</html>

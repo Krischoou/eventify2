@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html" class="logo">Eventify</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Начало</a></li>
+          <li><a href="events.html">Събития</a></li>
+          <li><a href="shop.html">Магазин</a></li>
+          <li><a href="about.html">За нас</a></li>
+          <li><a href="contact.html">Контакти</a></li>
+        </ul>
+      </div>
+      <div class="nav-icons">
+        <div class="search-container">
+          <img src="icons/search.png" alt="Търсене" class="search-icon">
+          <input type="text" id="search-input" class="search-input" placeholder="Търсене...">
+        </div>
+        <a href="cart.html"><img src="icons/shopping-bag.png" alt="Количка" class="nav-icon"></a>
+        <a href="login.html" id="profile-link"><img src="icons/user.png" alt="Профил" class="nav-icon"></a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="shop-container">
+    <!-- Филтри отляво -->
+    <aside class="shop-filters">
+      <h3>Филтрирай</h3>
+      <label>Категория:</label>
+      <select id="category-filter">
+        <option value="all">Всички</option>
+        <option value="balloons">Балони</option>
+        <option value="lights">Лампички</option>
+        <option value="dishes">Маса</option>
+        <option value="confetti">Конфети</option>
+        <option value="fireworks">Заря</option>
+        <option value="decor">Декорации</option>
+      </select>
+
+      <div class="price-filter">
+        <label for="minPrice">Цена от:</label>
+        <input type="number" id="minPrice" placeholder="0">
+
+        <label for="maxPrice">до:</label>
+        <input type="number" id="maxPrice" placeholder="100">
+
+        <button>Филтрирай</button>
+      </div>
+    </aside>
+
+    <!-- Основна част на магазина -->
+    <section class="shop-main">
+      <!-- Категории -->
+      <div class="shop-category-buttons">
+        <button class="category-btn active" data-category="all">Всички</button>
+        <button class="category-btn" data-category="balloons">🎈 Балони</button>
+        <button class="category-btn" data-category="lights">💡 Лампички</button>
+        <button class="category-btn" data-category="dishes">🍽️ Маса</button>
+        <button class="category-btn" data-category="confetti">🎉 Конфети</button>
+        <button class="category-btn" data-category="fireworks">🎆 Заря</button>
+      </div>
+
+      <!-- Падащо меню за сортиране -->
+      <div class="sort-container">
+        <label for="sort-select">Сортирай по:</label>
+        <select id="sort-select">
+          <option value="price-asc">Цена – възходящ ред</option>
+          <option value="price-desc">Цена – низходящ ред</option>
+          <option value="popular">Популярни</option>
+          <option value="discount">Намалени</option>
+        </select>
+      </div>
+
+      <!-- Продукти -->
+      <section class="shop-products">
+        <div class="product" data-category="balloons" data-price="39.90" data-popular="80" data-discount="10">
+          <img src="products/baloni1.jpg" alt="Балони">
+          <h4>Пакет Цветни Балони - 100бр.</h4>
+          <p>39.90 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="balloons" data-price="28.95" data-popular="80" data-discount="10">
+          <img src="products/baloni45.jpg" alt="Балони">
+          <h4>Пакет Цветни Балони - 45бр.</h4>
+          <p>28.95 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="balloons" data-price="19.95" data-popular="80" data-discount="10">
+          <img src="products/baloni-pastel-25.jpg" alt="Балони Пастел">
+          <h4>Пакет Цветни Балони Пастел - 25бр.</h4>
+          <p>19.95 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="dishes" data-price="39.95" data-popular="80" data-discount="10">
+          <img src="products/rd1.webp" alt="Комплект Конфети">
+          <h4>Комплект Хранене: Конфети - 16бр.</h4>
+          <p>39.95 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="decor" data-price="30" data-popular="120" data-discount="5">
+          <img src="products/flowers2.jpg" alt="Букет Ягодов Крем">
+          <h4>Букет Цветя "Ягодов Крем"</h4>
+          <p>30.00 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="decor" data-price="30" data-popular="120" data-discount="5">
+          <img src="products/flowers1.jpg" alt="Букет Синя Ванилия">
+          <h4>Букет Цветя "Синя Ванилия"</h4>
+          <p>30.00 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="fireworks" data-price="60" data-popular="30" data-discount="25">
+          <img src="products/fireworks-16.jpg" alt="Фойерверки 16 Изстрела">
+          <h4>Фойерверки Зара - 16 Изстрела</h4>
+          <p>60.00 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="dishes" data-price="4" data-popular="80" data-discount="10">
+          <img src="products/pribori-cherno.webp" alt="Прибори Черно">
+          <h4>Пластмасови Прибори Комплект Черно - 21бр.</h4>
+          <p>4.00 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="dishes" data-price="4" data-popular="80" data-discount="10">
+          <img src="products/pribori-rozovo.webp" alt="Прибори Розово">
+          <h4>Пластмасови Прибори Комплект Розово - 21бр.</h4>
+          <p>4.00 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="dishes" data-price="4" data-popular="80" data-discount="10">
+          <img src="products/pribori-srebro.webp" alt="Прибори Сребро">
+          <h4>Пластмасови Прибори Комплект Сребро - 21бр.</h4>
+          <p>4.00 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="dishes" data-price="4" data-popular="80" data-discount="10">
+          <img src="products/pribori-zlato.webp" alt="Прибори Злато">
+          <h4>Пластмасови Прибори Комплект Злато - 21бр.</h4>
+          <p>4.00 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="dishes" data-price="35.95" data-popular="70" data-discount="5">
+          <img src="products/stitch.jpg" alt="Комплект Стич">
+          <h4>Комплект Хранене: Стич - 16бр.</h4>
+          <p>35.95 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="dishes" data-price="39.95" data-popular="70" data-discount="5">
+          <img src="products/komplekt-hranene-mramor.webp" alt="Комплект Мрамор">
+          <h4>Комплект Хранене: Мрамор - 16бр.</h4>
+          <p>39.95 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="fireworks" data-price="9.95" data-popular="30" data-discount="25">
+          <img src="products/fireworks-16.jpg" alt="Фойерверки 16 Изстрела">
+          <h4>Фойерверки Зара - 16 Изстрела</h4>
+          <p>9.95 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="fireworks" data-price="18.90" data-popular="30" data-discount="25">
+          <img src="products/firework-fanatic-25.jpg" alt="Фойерверки Празник 25 Изстрела">
+          <h4>Фойерверки Празник - 25 Изстрела</h4>
+          <p>18.90 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+
+        <div class="product" data-category="fireworks" data-price="49.95" data-popular="30" data-discount="25">
+          <img src="products/fireworks-100.jpg" alt="Фойерверки Гранд 100 Изстрела">
+          <h4>Фойерверки Гранд - 100 Изстрела</h4>
+          <p>49.95 лв</p>
+          <button class="buy-btn">Купи</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>EventMaster – Твоят помощник за организиране на събития.</p>
+      <p class="footer-copy">&copy; 2025 EventMaster. Всички права запазени.</p>
+    </div>
+  </footer>
+
+  <script src="shop.js"></script>
+  <!-- Firebase SDK -->
+  <script type="module" src="/js/firebase-init.js"></script>
+</body>
+</html>
